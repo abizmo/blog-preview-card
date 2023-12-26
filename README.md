@@ -29,7 +29,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/abizmo/blog-preview-card](https://github.com/abizmo/blog-preview-card)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://abizmo.github.io/blog-preview-card/](https://abizmo.github.io/blog-preview-card/)
 
 ## My process
 
