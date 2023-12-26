@@ -1,0 +1,45 @@
+:root {
+  --ff-sans: 'Figtree', sans-serif;
+  --fw-regular: 600;
+  --fw-bold: 800;
+
+  --fs-400: 16px;
+  --fs-300: 0.875rem;
+  --fs-200: 0.75rem;
+
+  --clr-primary: 47 88% 63%;
+  --clr-neutral-900: 0 0% 7%;
+  --clr-neutral-500: 0 0% 50%;
+  --clr-neutral-100: 0 0% 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+html {
+  font-weight: var(--fw-regular);
+  font-family: var(--ff-sans);
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+  background-color: hsl(var(--clr-primary));
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: 1fr min-content;
+  place-items: center;
+}
+
+ul[role='list'] {
+  padding: 0;
+  list-style: none;
+}

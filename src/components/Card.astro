@@ -1,0 +1,97 @@
+---
+import {format} from 'date-fns';
+const { title, description, author, date, tags, image } = Astro.props;
+
+const formatedDate = format(new Date(date), 'd MMM yyyy');
+---
+
+<article class='card'>
+  <img class='card__image' src={image.src} alt={image.alt} />
+
+  <ul role='list' class='card__tags'>
+    {tags.map((tag) => (<li class='card__tag'>{tag}</li>))}
+  </ul>
+
+  <time datetime={date} class="card__date">Published {formatedDate}</time>
+
+  <h3 class="card__title"><a href='#'>{title}</a></h3>
+
+  <p class="card__description">
+    {description}
+  </p>
+
+  <footer class='card__footer'>
+    <img class='card__avatar' src={author.avatar} alt={author.name} />
+    <span class='card__author'>{author.name}</span>
+  </footer>
+</article>
+
+
+<style>
+  .card {
+    --br: 1.5rem;
+    width: 100%;
+    max-width: 327px;
+    border: 1px solid hsl(var(--clr-neutral-900));
+    background-color: hsl(var(--clr-neutral-100));
+    border-radius: var(--br);
+    padding: 1.5rem;
+    box-shadow: .7rem .7rem 0 hsl(var(--clr-neutral-900));
+  }
+
+  .card__image {
+    border-radius: calc(var(--br) / 2);
+  }
+
+  .card__tags {
+    display: flex;
+    font-size: var(--fs-200);
+    font-weight: var(--fw-bold);
+    margin-block: 2em .5em;
+  }
+
+  .card__tag {
+    background-color: hsl(var(--clr-primary));
+    padding: .25rem .75rem;
+    border-radius: .25rem;
+  }
+
+  .card__date {
+    font-size: var(--fs-200);
+  }
+
+  .card__title {
+    margin-block: .5em;
+  }
+
+  .card__title > a {
+    color: hsl(var(--clr-neutral-900));
+    text-decoration: none;
+  }
+
+  .card__title > a:hover,
+  .card__title > a:focus-visible {
+    color: hsl(var(--clr-primary));
+  }
+
+  .card__description {
+    color: hsl(var(--clr-neutral-500));
+    margin: 0;
+  }
+
+  .card__footer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .card__avatar {
+    width: 2.5rem;
+  }
+
+  .card__author {
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-300);
+  }
+</style>

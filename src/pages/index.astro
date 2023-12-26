@@ -1,0 +1,31 @@
+---
+import Card from '../components/Card.astro';
+import FrontendMentorLayout from '../layouts/FrontendMentorLayout.astro';
+
+const post = {
+  title: 'HTML & CSS foundations',
+  description:
+    'These languages are the backbone of every website, defining structure, content, and presentation.',
+  date: '2023-12-21',
+  tags: ['Learning'],
+  image: {
+    src: '/images/illustration-article.svg',
+    alt: 'Illustration of a code snippet',
+  },
+  author: {
+    name: 'Greg Hooper',
+    avatar: '/images/image-avatar.webp',
+  },
+};
+---
+
+<FrontendMentorLayout>
+  <Card
+    title={post.title}
+    description={post.description}
+    author={post.author}
+    date={post.date}
+    tags={post.tags}
+    image={post.image}
+  />
+</FrontendMentorLayout>
